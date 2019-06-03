@@ -1,2 +1,3 @@
 # styled-lib
-sample of building a styled components library 
+a styled components based library 
+ 
