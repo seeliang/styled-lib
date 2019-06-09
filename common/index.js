@@ -1,1 +1,7 @@
-export * from 'colors';
+import { colors } from './colors';
+
+const common = {
+    colors
+}
+
+export default common

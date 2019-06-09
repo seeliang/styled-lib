@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 const ColorBlock = styled.div`
     width: 60px;
     height: 60px;
-    background: green;
+    background: ${props => props.theme.colors.primary};
 `
 
 storiesOf('Common.Colors', module).add('Default', () => 
