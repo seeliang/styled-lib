@@ -4,17 +4,9 @@ import { storiesOf } from '@storybook/react';
 
 import common from '../../../common';
 
+import { color } from '../../helpers'
+
 const { colors } = common
-
-const generateColor = colors => {
-    const color = {}
-    Object.keys(colors).forEach(i => {
-        color[i] = props => props.theme.colors[i]
-    });
-    return color;
-}
-
-const color = generateColor(colors);
 
 const Section = styled.div`
     display: inline-block;
