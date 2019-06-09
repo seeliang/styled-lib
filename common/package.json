@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "the common / theme set of styled lib",
   "main": "index.js",
-  "repository": "https://github.com/seeliang/styled-lib/tree/master/packages/babel-core",
+  "repository": "https://github.com/seeliang/styled-lib/tree/master/common",
   "author": "sihui",
   "license": "MIT"
 }
