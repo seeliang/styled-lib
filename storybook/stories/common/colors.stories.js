@@ -4,16 +4,17 @@ import { storiesOf } from '@storybook/react';
 
 import common from '../../../common';
 
+const { colors } = common
 
-const generateColor = common => {
+const generateColor = colors => {
     const color = {}
-    Object.keys(common.colors).forEach(i => {
+    Object.keys(colors).forEach(i => {
         color[i] = props => props.theme.colors[i]
     });
     return color;
 }
 
-const color = generateColor(common);
+const color = generateColor(colors);
 
 const Section = styled.div`
     display: inline-block;
@@ -28,7 +29,7 @@ const ColorBlock = styled.div`
     background: ${props => color[props.color]};
 `
 const AllColors = () => {
-    const colorsList = Object.keys(common.colors);
+    const colorsList = Object.keys(colors);
     return colorsList.map(i => 
         <Section key={i}> 
             <h4> {i} </h4> 
