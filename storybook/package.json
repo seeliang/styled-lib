@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "@storybook/react": "^5.0.11",
+  "dependencies": {
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
+    "@storybook/react": "^5.0.11",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
     "@babel/core": "^7.4.5",
     "babel-loader": "^8.0.6"
   },
