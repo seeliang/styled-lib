@@ -1,7 +1,7 @@
 import { colors } from './colors';
 
 const common = {
-    colors
-}
+  colors,
+};
 
-export default common
+export default common;

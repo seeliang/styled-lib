@@ -4,14 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "styled-components": "^4.3.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.4.5",
+    "styled-components": "^4.3.1",
     "@storybook/addon-actions": "^5.0.11",
     "@storybook/addon-links": "^5.0.11",
     "@storybook/addons": "^5.0.11",
     "@storybook/react": "^5.0.11",
+    "react": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
     "babel-loader": "^8.0.6"
   },
   "scripts": {
