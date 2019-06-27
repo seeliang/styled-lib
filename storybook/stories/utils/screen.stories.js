@@ -1,26 +1,14 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 
 import common from '../../../common';
+import { generateScreen } from '../../../utils';
 
 const { breakpoints } = common;
 
-const screen = (set) => {
-  const mapping = {
-    desktop: ['maxDesktop', 'maxTablet'],
-    tablet: ['maxTablet', 'maxPhone'],
-    mobile: ['maxMobile'],
-    phone: ['maxPhone'],
-  };
-  const max = breakpoints[mapping[set][0]];
-  if (mapping[set].length > 1) {
-    const min = breakpoints[mapping[set][1]] + 1;
-    return css`@media (max-width: ${max}px) and (min-width: ${min}px)`;
-  }
 
-  return css`@media (max-width: ${max}px)`;
-};
+const screen = generateScreen(breakpoints);
 
 const DesktopP = styled.p`
   display: none;
