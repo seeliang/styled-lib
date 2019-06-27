@@ -1,8 +1,11 @@
+const maxTablet = 1280;
+const maxDesktop = 1920;
+
 export const breakpoints = {
   min: 320,
   maxPhone: 768,
-  maxTablet: 1280,
-  maxDesktop: 1920,
-  maxMobile: this.maxTablet,
-  max: this.maxDesktop,
+  maxTablet,
+  maxDesktop,
+  maxMobile: maxTablet,
+  max: maxDesktop,
 };
