@@ -6,15 +6,20 @@ import common from '../../../common';
 
 const { breakpoints } = common;
 
-console.log(breakpoints);
-
 const screen = (set) => {
   const mapping = {
     desktop: ['maxDesktop', 'maxTablet'],
+    tablet: ['maxTablet', 'maxPhone'],
+    mobile: ['maxMobile'],
+    phone: ['maxPhone'],
   };
   const max = breakpoints[mapping[set][0]];
-  const min = breakpoints[mapping[set][1]] + 1;
-  return css`@media (max-width: ${max}px) and (min-width: ${min}px)`;
+  if (mapping[set].length > 1) {
+    const min = breakpoints[mapping[set][1]] + 1;
+    return css`@media (max-width: ${max}px) and (min-width: ${min}px)`;
+  }
+
+  return css`@media (max-width: ${max}px)`;
 };
 
 const DesktopP = styled.p`
@@ -24,5 +29,34 @@ const DesktopP = styled.p`
   }
 `;
 
+const TabletP = styled.p`
+  display: none;
+  ${screen('tablet')} {
+    display: block;
+  }
+`;
 
-storiesOf('Utils.Screen', module).add('Default', () => <DesktopP>{'${screen(desktop)}'}</DesktopP>);
+const MobileP = styled.p`
+  display: none;
+  ${screen('mobile')} {
+    display: block;
+  }
+`;
+
+const PhoneP = styled.p`
+  display: none;
+  ${screen('phone')} {
+    display: block;
+  }
+`;
+
+/* eslint-disable no-template-curly-in-string */
+storiesOf('Utils.Screen', module).add('Default', () => (
+  <>
+    <DesktopP>{'${screen(desktop)}'}</DesktopP>
+    <MobileP>{'${screen(mobile)}'}</MobileP>
+    <TabletP>{'${screen(tablet)}'}</TabletP>
+    <PhoneP>{'${screen(phone)}'}</PhoneP>
+  </>
+));
+/* eslint-enable */
