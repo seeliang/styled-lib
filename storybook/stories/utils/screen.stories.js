@@ -2,13 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { storiesOf } from '@storybook/react';
 
-import common from '../../../common';
-import { generateScreen } from '../../../utils';
-
-const { breakpoints } = common;
-
-
-const screen = generateScreen(breakpoints);
+import { screen } from '../../helpers';
 
 const DesktopP = styled.p`
   display: none;
