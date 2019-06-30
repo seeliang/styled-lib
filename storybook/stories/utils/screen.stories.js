@@ -1,35 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { storiesOf } from '@storybook/react';
 
 import { screen } from '../../helpers';
 
-const DesktopP = styled.p`
+const generateStyle = set => css`
   display: none;
-  ${screen('desktop')} {
+  ${screen(set)} {
     display: block;
+    font-size: 40px;
+    text-align: center;
   }
+`;
+
+const DesktopP = styled.p`
+  ${generateStyle('desktop')}
 `;
 
 const TabletP = styled.p`
-  display: none;
-  ${screen('tablet')} {
-    display: block;
-  }
+  ${generateStyle('tablet')}
 `;
 
 const MobileP = styled.p`
-  display: none;
-  ${screen('mobile')} {
-    display: block;
-  }
+  ${generateStyle('mobile')}
 `;
 
 const PhoneP = styled.p`
-  display: none;
-  ${screen('phone')} {
-    display: block;
-  }
+  ${generateStyle('phone')}
 `;
 
 /* eslint-disable no-template-curly-in-string */
