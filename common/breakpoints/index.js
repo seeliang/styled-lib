@@ -7,7 +7,6 @@ export const breakpoints = {
   min: 320,
   maxPhone,
   maxTablet,
-  maxDesktop,
   maxMobile: maxTablet,
   max: maxDesktop,
 };
