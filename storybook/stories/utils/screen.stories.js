@@ -32,10 +32,10 @@ const PhoneP = styled.p`
 /* eslint-disable no-template-curly-in-string */
 storiesOf('Utils.Screen', module).add('Default', () => (
   <>
-    <DesktopP>{'${screen(desktop)}'}</DesktopP>
-    <MobileP>{'${screen(mobile)}'}</MobileP>
-    <TabletP>{'${screen(tablet)}'}</TabletP>
-    <PhoneP>{'${screen(phone)}'}</PhoneP>
+    <DesktopP>{'${screen(\'desktop\')}'}</DesktopP>
+    <MobileP>{'${screen(\'mobile\')}'}</MobileP>
+    <TabletP>{'${screen(\'tablet\')}'}</TabletP>
+    <PhoneP>{'${screen(\'phone\')}'}</PhoneP>
   </>
 ));
 /* eslint-enable */
