@@ -14,5 +14,8 @@
     "styled-components"
   ],
   "author": "seeliang <me@sihuiliang.com> (http://www.sihuiliang.com)",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "styled-components": "^4.3.2"
+  }
 }
