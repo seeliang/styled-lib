@@ -4,7 +4,16 @@ export const maxWidth = value => css`@media (max-width: ${value}px)`;
 
 export const minWidth = value => css`@media (min-width: ${value + 1}px)`;
 
-export const betweenWidth = (a, b) => css`@media (max-width: ${a}px) and (min-width: ${b + 1}px)`;
+export const betweenWidth = (x, y) => {
+  let max = x;
+  let min = y;
+  if (min > max) {
+    max = y;
+    min = x;
+  }
+
+  return css`@media (max-width: ${max}px) and (min-width: ${min + 1}px)`;
+};
 
 export const generateScreen = breakpointsSet => (set) => {
   const mapping = {
