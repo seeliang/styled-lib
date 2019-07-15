@@ -7,6 +7,6 @@ ____
   how to generate ${color} snippets in styled components library: [mapping colors to function](https://youtu.be/5wWo4viSIGI?t=328)
 
 ### Screen
-* screen()
+* generateScreen()
   
-  how to handle media query with consistency device based breakpoints: [mapping breakpoints to function](https://youtu.be/E4MgstT1sQ8)  
+  how to generate${screen} snippets and handle media query with consistency device based breakpoints: [mapping breakpoints to function](https://youtu.be/E4MgstT1sQ8)  
