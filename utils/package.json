@@ -1,6 +1,6 @@
 {
   "name": "@styled-lib/utils",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "the helpers for styled lib",
   "main": "index.js",
   "scripts": {
