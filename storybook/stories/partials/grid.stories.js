@@ -16,7 +16,7 @@ const Block = styled.p`
 
 const getBreakpoints = set => props => `${props.theme.breakpoints[set]}px`;
 
-const ColorBlock = ({ col }) => <Block>{col}</Block>;
+const ColorBlock = ({ text }) => <Block>{text}</Block>;
 
 const Row = styled.div`
   padding: 0 ${gutter / 2}px;
@@ -33,7 +33,7 @@ const Col = styled.div`
 storiesOf('Partials.grid', module).add('Default', () => (
   <Row>
     <Col>
-      <ColorBlock col={12} />
+      <ColorBlock text={12} />
     </Col>
   </Row>
 ));
