@@ -2,10 +2,10 @@ import { configure, addDecorator } from '@storybook/react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import React from 'react';
 
-import common, { reset } from '../../common';
+import common, { concord } from '../../common';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${concord}
 `;
 const passCommon = storyFn => (
   <ThemeProvider theme={common}>
