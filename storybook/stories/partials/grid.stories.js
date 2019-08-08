@@ -77,11 +77,11 @@ storiesOf('Partials.grid', module).add('Default', () => (
       </Col>
     </Row>
     <Row>
-      <Col desktop={7} tablet={1}>
-        <ColorBlock text="desktop: 7, tablet: 1" />
+      <Col desktop={7} tablet={1} phone={1}>
+        <ColorBlock text="desktop: 7, tablet: 1, phone: 1" />
       </Col>
-      <Col desktop={5} tablet={3}>
-        <ColorBlock text="desktop: 5, tablet: 3" />
+      <Col desktop={5} tablet={3} phone={1}>
+        <ColorBlock text="desktop: 5, tablet: 3, phone: 1" />
       </Col>
     </Row>
 
