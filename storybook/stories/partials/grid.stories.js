@@ -37,7 +37,6 @@ const Row = styled.div`
   padding: 0 ${gutter / 2}px;
   display: flex;
   flex-wrap: wrap;
-  align-items: stretch;
   margin: 0 auto;
   min-width: ${getBreakpoints('min')};
   max-width: ${getBreakpoints('max')};
@@ -45,7 +44,7 @@ const Row = styled.div`
 
 const generateScreenWidth = set => css`
  ${screen(set)} {
-    flex: 0 0 ${props => getWidth({ num: props[set], col: totalCol[set] })};
+    width: ${props => getWidth({ num: props[set], col: totalCol[set] })};
   }
 `;
 
@@ -54,6 +53,7 @@ const Col = styled.div`
   display: inline-block;
   ${generateScreenWidth('desktop')};
   ${generateScreenWidth('tablet')};
+  ${generateScreenWidth('phone')};
 `;
 
 storiesOf('Partials.grid', module).add('Default', () => (
@@ -62,14 +62,14 @@ storiesOf('Partials.grid', module).add('Default', () => (
       {`totalCol: ${JSON.stringify(totalCol)}`}
     </p>
     <Row>
-      <Col desktop={1}>
-        <ColorBlock text="desktop: 1" />
+      <Col desktop={1} phone={1}>
+        <ColorBlock text="desktop: 1, phone: 1" />
       </Col>
-      <Col desktop={2}>
-        <ColorBlock text="desktop: 2" />
+      <Col desktop={2} phone={1}>
+        <ColorBlock text="desktop: 2, phone: 1" />
       </Col>
-      <Col desktop={3}>
-        <ColorBlock text="desktop: 3" />
+      <Col desktop={3} phone={2}>
+        <ColorBlock text="desktop: 3, phone: 2 " />
       </Col>
 
       <Col desktop={6}>
