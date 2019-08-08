@@ -27,7 +27,7 @@ const ColorBlock = ({ text }) => <Block>{text}</Block>;
 const getWidth = ({ num, col }) => {
   const cut = num || col;
   if (cut < 1 || cut > num) {
-    throw new Error(`your col number should be in between of 1 and ${col}`);
+    throw new Error(`your col number should be in between of 0 and ${col}`);
   }
   const percent = 100 / col * cut;
   return `${percent}%`;
@@ -35,7 +35,9 @@ const getWidth = ({ num, col }) => {
 
 const Row = styled.div`
   padding: 0 ${gutter / 2}px;
-  display: block;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
   margin: 0 auto;
   min-width: ${getBreakpoints('min')};
   max-width: ${getBreakpoints('max')};
@@ -43,7 +45,7 @@ const Row = styled.div`
 
 const generateScreenWidth = set => css`
  ${screen(set)} {
-    width: ${props => getWidth({ num: props[set], col: totalCol[set] })};
+    flex: 0 0 ${props => getWidth({ num: props[set], col: totalCol[set] })};
   }
 `;
 
@@ -119,9 +121,8 @@ storiesOf('Partials.grid', module).add('Default', () => (
     </Row>
     <Row>
       <Col>
-        <ColorBlock text="" />
+        <ColorBlock text="< no config >" />
       </Col>
     </Row>
   </>
 ));
-/* eslint-enable */
