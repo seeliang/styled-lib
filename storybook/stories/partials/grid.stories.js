@@ -36,7 +36,7 @@ const getWidth = ({ num, col }) => {
 const Row = styled.div`
   padding: 0 ${gutter / 2}px;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   align-items: stretch;
   margin: 0 auto;
   min-width: ${getBreakpoints('min')};
@@ -87,10 +87,10 @@ storiesOf('Partials.grid', module).add('Default', () => (
 
     <Row>
       <Col desktop={8} tablet={2}>
-        <ColorBlock text="desktop: 8, tablet 2" />
+        <ColorBlock text="desktop: 8, tablet: 2" />
       </Col>
       <Col desktop={4} tablet={2}>
-        <ColorBlock text="desktop: 4, tablet 2" />
+        <ColorBlock text="desktop: 4, tablet: 2" />
       </Col>
     </Row>
 
