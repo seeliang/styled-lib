@@ -48,12 +48,33 @@ const generateScreenWidth = set => css`
   }
 `;
 
+const hasMobile = props => !!props.mobile;
+const warningOverride = (props) => {
+  const { mobile, tablet, phone } = props;
+  if (!!mobile !== true) {
+    return;
+  }
+
+  if (!!phone || !!tablet) {
+    throw new Error('please remove mobile and use tablet/phone combination instead');
+  }
+};
+
 const Col = styled.div`
   padding: 0 ${gutter / 2}px;
   display: inline-block;
+
   ${generateScreenWidth('desktop')};
-  ${generateScreenWidth('tablet')};
-  ${generateScreenWidth('phone')};
+  ${(props) => {
+    warningOverride(props);
+    if (hasMobile(props)) {
+      return generateScreenWidth('mobile');
+    }
+    return css`
+      ${generateScreenWidth('tablet')}; 
+      ${generateScreenWidth('phone')};
+    `;
+  }}
 `;
 
 storiesOf('Partials.grid', module).add('Default', () => (
@@ -95,17 +116,17 @@ storiesOf('Partials.grid', module).add('Default', () => (
     </Row>
 
     <Row>
-      <Col desktop={9}>
-        <ColorBlock text="desktop: 9" />
+      <Col desktop={9} mobile={1}>
+        <ColorBlock text="desktop: 9, mobile: 1" />
       </Col>
-      <Col desktop={3}>
-        <ColorBlock text="desktop: 3" />
+      <Col desktop={3} mobile={1}>
+        <ColorBlock text="desktop: 3, mobile: 1" />
       </Col>
     </Row>
 
     <Row>
-      <Col desktop={10}>
-        <ColorBlock text="desktop: 10" />
+      <Col desktop={10} mobile={2}>
+        <ColorBlock text="desktop: 10, mobile: 2" />
       </Col>
       <Col desktop={2}>
         <ColorBlock text="desktop: 2" />
